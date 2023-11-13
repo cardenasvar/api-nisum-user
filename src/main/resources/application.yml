@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    default: "local"
+
+user:
+  pass:
+    regexp: "^([A-Z]{1})([a-z].*)([0-9]{2})"
