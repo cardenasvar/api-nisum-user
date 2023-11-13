@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "ad3ba243-8381-4761-879d-85356370f6c1",
+		"name": "api-nisum-user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6340053"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"jonathan@cardenas.org\",\r\n    \"password\": \"Nisum2023\"\r\n}\r\n\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25hdGhhbkBjYXJkZW5hcy5vcmciLCJleHAiOjE2OTk4NzMzMDYsImlhdCI6MTY5OTgzNzMwNn0.aTOZ0xrNJf5LS46-Uk3PMh1_8JBG6sWzll1BDGbclZ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Name 1\",\r\n    \"email\": \"email@1.org\",\r\n    \"password\": \"Pass01\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": \"1234567\",\r\n            \"citycode\": \"1\",\r\n            \"contrycode\": \"57\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb25hdGhhbkBjYXJkZW5hcy5vcmciLCJleHAiOjE2OTk4NjA3MTYsImlhdCI6MTY5OTgyNDcxNn0.WdVepGMDV9rEJPBeGPW9yDDQrZtrsH9JWJ7DgzJjQVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
